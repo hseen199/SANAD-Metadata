@@ -1,0 +1,28 @@
+{
+  "name": "SANAD",
+  "symbol": "SNDX",
+  "description": "SANAD is a decentralized token designed to establish trust and accountability in digital interactions. Built on the Solana blockchain, it enables individuals and organizations to securely verify, record, and honor commitments through transparent and immutable on-chain metadata.",
+  "image": "https://gateway.pinata.cloud/ipfs/bafybeiesiilzk5tfdyay27g3v2qaelrftjtc7q2y5i426us54lu5lwkekq",
+  "external_url": "",
+  "seller_fee_basis_points": 0,
+  "attributes": [],
+  "collection": {
+    "name": "SANAD",
+    "family": "SNDX"
+  },
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gateway.pinata.cloud/ipfs/bafybeiesiilzk5tfdyay27g3v2qaelrftjtc7q2y5i426us54lu5lwkekq",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "7x9b9DJRozryux7Ynx4X3vwTt4Q2v7qUocGbC2rfy7Fv",
+        "share": 100
+      }
+    ]
+  }
+}
