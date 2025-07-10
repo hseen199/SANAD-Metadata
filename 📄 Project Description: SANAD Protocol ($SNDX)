@@ -1,0 +1,92 @@
+📄 Project Description: SANAD Protocol ($SNDX)
+SANAD Protocol is a decentralized blockchain-based system for creating, signing, and verifying digital agreements between two or more parties. Built on the Solana blockchain, it allows users to document any kind of commitment—such as service delivery, digital work, payment, or personal loan—as a “Digital Bond” that is transparently stored and verifiable on-chain.
+
+🧠 Core Concept:
+The idea behind SANAD is to transform verbal or informal promises into formal, traceable digital bonds, ensuring mutual accountability without needing legal institutions or third-party intermediaries.
+
+Each bond includes:
+
+Wallet addresses of both parties
+
+Agreement details (description, amount, time)
+
+On-chain signature from both sides
+
+Timestamp and transaction ID
+
+Optional features like PDF download or NFT conversion
+
+🪙 Utility of $SNDX Token:
+The $SNDX token is the native utility token of the protocol and is required for:
+
+Creating and verifying digital bonds (1–5 SNDX per bond)
+
+Converting bonds into NFTs (10 SNDX)
+
+Accessing premium features
+
+Participating in governance (DAO votes)
+
+Earning rewards for consistent usage
+
+⚙️ How It Works:
+Initiator (Party A) fills out the bond form and signs it using a Solana wallet (e.g., Phantom).
+
+Pays a small fee in $SNDX to initiate the bond.
+
+Receiver (Party B) reviews and signs the bond.
+
+The bond is stored on-chain with full metadata and can be downloaded as a verified PDF.
+
+Both parties gain reputation points based on their execution history.
+
+🧾 Key Features:
+On-chain digital agreements
+
+Optional private/public visibility
+
+Wallet-based reputation system
+
+PDF download with signatures
+
+NFT conversion of digital bonds
+
+DAO voting system for protocol upgrades
+
+🚀 Execution Timeline:
+Phase	Status	Description
+Token Minting	✅ Completed	$SNDX minted on Solana
+Metadata Setup	✅ Completed	Image, social links, metadata live on IPFS
+Smart Bond Form (v1)	✅ Ready	Live on website: sanadprotocol.com
+Wallet Integration	✅ Done	Phantom wallet connect active
+PDF Generator	🛠️ In Progress	Auto-export to signed PDF
+NFT Conversion	🔜 Planned	Bonds to be minted as NFTs
+Reputation System	🔜 Planned	Wallet-based score to show reliability
+DAO Setup	🔜 Planned	Decentralized governance system
+
+🌍 Why It Matters:
+In many communities, verbal promises go unfulfilled due to lack of trust or legal recourse. SANAD bridges that gap by offering an accessible, blockchain-based solution to:
+
+Build trust
+
+Hold parties accountable
+
+Document services, payments, loans, freelance jobs, and more
+
+Empower users to manage digital commitments without intermediaries
+
+📡 Official Links:
+Website: https://sanadprotocol.com
+
+Mint Address: 2z9M1AMb7eNhJgoh48cPNMQV4BwcHmUz1YMysiYQkYU7
+
+Metadata: IPFS Metadata
+
+Telegram: @SNDXCommunity
+
+Twitter: @SNDXCommunity
+
+TikTok: @sanadprotocol
+
+YouTube: SANAD Protocol
+
