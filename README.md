@@ -36,3 +36,12 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 ## Code of Conduct
 
 Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for our code of conduct.
+
+
+## 🔗 Social Links
+- Website: https://sanadprotocol.com/
+- Twitter (X): https://x.com/SNDXCommunity
+- Telegram: https://t.me/SNDXCommunity
+- TikTok: https://www.tiktok.com/@sanadprotocol
+- Instagram: https://www.instagram.com/sanadprotocol
+- YouTube: https://www.youtube.com/@sanadprotocol
