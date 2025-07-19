@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Legal Digital Bond | SANAD Protocol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background-color: #334155;
+      color: white;
+      font-size: 16px;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #38bdf8;
+    }
+    button {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 80px;
+    }
+  </style>
+</head>
+<body style="background: linear-gradient(to right, #141e30, #243b55); font-family: 'Segoe UI', sans-serif; color: white;">
+  <div style="text-align: left; padding: 10px; background-color: #0f172a; border-bottom: 1px solid #475569;">
+    <label for="language-select" style="color: white; margin-right: 10px;">🌐 Language:</label>
+    <select id="language-select" onchange="window.location.href=this.value;" style="padding: 5px; border-radius: 6px; background-color: #1e293b; color: white; border: none;">
+      <option value="bond_form_sender.html">العربية 🇸🇦</option>
+      <option value="bond_form_sender_en.html" selected>English 🇺🇸</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      <img alt="SANAD Logo" src="https://gateway.pinata.cloud/ipfs/bafybeiesiilzk5tfdyay27g3v2qaelrftjtc7q2y5i426us54lu5lwkekq"/>
+    </div>
+
+    <h1>📜 Create Legal Digital Bond</h1>
+    <form action="#" method="post">
+      <h3 style="margin-top: 30px; color: #38bdf8;">🧾 First Party Details</h3>
+      <label for="first_country">Country:</label>
+      <select id="first_country" name="first_country" required>
+        <!-- same list of countries as before -->
+      </select>
+
+      <label for="first_city">City:</label>
+      <input id="first_city" name="first_city" type="text" required/>
+
+      <label for="sender_name">Full Name:</label>
+      <input id="sender_name" name="sender_name" type="text" required/>
+
+      <label for="sender_wallet">Solana Wallet Address:</label>
+      <input id="sender_wallet" name="sender_wallet" type="text" required/>
+
+      <h3 style="margin-top: 30px; color: #f472b6;">📄 Second Party Details</h3>
+      <label for="receiver_name">Full Name:</label>
+      <input id="receiver_name" name="receiver_name" type="text" required/>
+
+      <label for="second_country">Country:</label>
+      <select id="second_country" name="second_country" required>
+        <!-- same list of countries -->
+      </select>
+
+      <label for="second_city">City:</label>
+      <input id="second_city" name="second_city" type="text" required/>
+
+      <label for="receiver_wallet">Solana Wallet Address:</label>
+      <input id="receiver_wallet" name="receiver_wallet" type="text" required/>
+
+      <label for="amount">Agreed Amount:</label>
+      <input id="amount" name="amount" type="number" required/>
+
+      <label for="currency">Currency:</label>
+      <select id="currency" name="currency" required>
+        <option value="USD">USD – US Dollar</option>
+        <option value="EUR">EUR – Euro</option>
+        <option value="SAR">SAR – Saudi Riyal</option>
+        <option value="AED">AED – UAE Dirham</option>
+        <option value="KWD">KWD – Kuwaiti Dinar</option>
+        <option value="QAR">QAR – Qatari Riyal</option>
+        <option value="BHD">BHD – Bahraini Dinar</option>
+        <option value="OMR">OMR – Omani Rial</option>
+        <option value="JOD">JOD – Jordanian Dinar</option>
+        <option value="LBP">LBP – Lebanese Pound</option>
+        <option value="SYP">SYP – Syrian Pound</option>
+        <option value="EGP">EGP – Egyptian Pound</option>
+        <option value="TRY">TRY – Turkish Lira</option>
+        <option value="GBP">GBP – British Pound</option>
+        <option value="CHF">CHF – Swiss Franc</option>
+        <option value="CNY">CNY – Chinese Yuan</option>
+        <option value="JPY">JPY – Japanese Yen</option>
+        <option value="INR">INR – Indian Rupee</option>
+        <option value="CAD">CAD – Canadian Dollar</option>
+        <option value="AUD">AUD – Australian Dollar</option>
+        <option value="SNDX">SNDX – Sanad Token</option>
+      </select>
+
+      <label for="due_date">Due Date:</label>
+      <input id="due_date" name="due_date" type="date" required/>
+
+      <label for="agreement_text">Agreement Description:</label>
+      <textarea id="agreement_text" name="agreement_text" rows="5" required></textarea>
+
+      <label for="email_sender">First Party Email:</label>
+      <input id="email_sender" name="email_sender" type="email" required/>
+
+      <label for="id_sender">First Party ID Number:</label>
+      <input id="id_sender" name="id_sender" type="text" required/>
+
+      <label for="email_receiver">Second Party Email:</label>
+      <input id="email_receiver" name="email_receiver" type="email" required/>
+
+      <label for="id_receiver">Second Party ID Number:</label>
+      <input id="id_receiver" name="id_receiver" type="text" required/>
+
+      <label for="legal_terms">Additional Legal Terms (optional):</label>
+      <textarea id="legal_terms" name="legal_terms" rows="3"></textarea>
+
+      <div style="margin-top: 40px; background-color: #334155; padding: 20px; border-radius: 10px;">
+        <h3>Legal Terms & Disclaimer</h3>
+        <p>This digital bond is a legally binding agreement under applicable electronic signature and blockchain laws, including but not limited to:</p>
+        <ul>
+          <li>UNCITRAL Model Law on Electronic Commerce</li>
+          <li>EU eIDAS Regulation (No. 910/2014)</li>
+          <li>US UETA & ESIGN Acts</li>
+          <li>Any relevant local law in the parties’ jurisdictions</li>
+        </ul>
+        <p>By submitting this form and signing on the Solana blockchain, you confirm that you:</p>
+        <ul>
+          <li>Are the party to this bond and accept all terms</li>
+          <li>Understand this has the same legal force as a traditional paper signature</li>
+          <li>Acknowledge that blockchain records are immutable</li>
+          <li>Have read and understood all clauses without coercion</li>
+        </ul>
+        <p><strong>You waive any right to challenge the validity or enforceability of this bond.</strong></p>
+      </div>
+
+      <div style="margin-top: 20px; background-color: #1e293b; padding: 15px; border-radius: 8px;">
+        <input id="legal_accept" name="legal_accept" type="checkbox" required/>
+        <label for="legal_accept" style="margin-right: 8px;">I fully agree to the above legal terms.</label>
+      </div>
+
+      <h3 style="margin-top: 30px; color: #38bdf8;">✍️ First Party Signature</h3>
+      <canvas id="signature-pad" width="600" height="200" style="border:2px dashed #38bdf8; background:#1e293b; display:block; margin-top:10px;"></canvas>
+      <button type="button" onclick="clearSignature()" style="margin-top:10px;">🧹 Clear Signature</button>
+      <input type="hidden" name="signature_data" id="signature_data"/>
+
+      <button type="submit">Submit Bond 📩</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.6/dist/signature_pad.umd.min.js"></script>
+  <script>
+    // Signature pad setup
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas, { backgroundColor: 'rgb(30,41,59)' });
+
+    function clearSignature() {
+      signaturePad.clear();
+    }
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+      if (!signaturePad.isEmpty()) {
+        document.getElementById('signature_data').value = signaturePad.toDataURL();
+      } else {
+        alert("Please sign the bond before submitting.");
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <!-- Solana Web3 -->
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+  <div style="position:fixed; top:20px; right:20px; z-index:9999;">
+    <button id="connectWallet" style="padding:10px 20px; background-color:#22d3ee; color:black; font-weight:bold; border:none; border-radius:10px; cursor:pointer;">
+      Connect Wallet
+    </button>
+  </div>
+  <script>
+    const connectButton = document.getElementById('connectWallet');
+    async function connectWallet() {
+      if (window.solana) {
+        try {
+          const resp = await window.solana.connect();
+          const addr = resp.publicKey.toString();
+          connectButton.textContent = addr.slice(0,4) + "…" + addr.slice(-4);
+          connectButton.disabled = true;
+          document.getElementById("sender_wallet").value = addr;
+        } catch(e) {
+          console.warn("❌ Failed to connect wallet:", e);
+        }
+      } else {
+        alert("Please install Phantom wallet first.");
+        window.open("https://phantom.app/", "_blank");
+      }
+    }
+    connectButton.addEventListener('click', connectWallet);
+  </script>
+</body>
+</html>

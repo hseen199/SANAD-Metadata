@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Second Party Signature – Digital Bond</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Tahoma', sans-serif;
+      padding: 30px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    }
+    h2 {
+      color: #38bdf8;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-title {
+      color: #facc15;
+      margin: 30px 0 10px;
+      font-size: 20px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 6px;
+    }
+    .bond-field {
+      margin: 12px 0;
+      font-size: 17px;
+    }
+    .bond-field span {
+      color: #facc15;
+      font-weight: bold;
+    }
+    canvas {
+      border: 2px dashed #38bdf8;
+      background-color: #1e293b;
+      display: block;
+      margin-top: 15px;
+    }
+    button {
+      background-color: #38bdf8;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 25px;
+      margin-top: 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    button:hover { background-color: #0ea5e9; }
+    .legal-note {
+      margin-top: 30px;
+      font-size: 15px;
+      background-color: #0c4a6e;
+      padding: 15px;
+      border-radius: 10px;
+      color: #f8fafc;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: left; padding: 10px; background-color: #0f172a; border-bottom: 1px solid #475569;">
+    <label for="language-select" style="color: white; margin-right: 10px;">🌐 Language:</label>
+    <select id="language-select" onchange="window.location.href=this.value;" style="padding: 5px; border-radius: 6px; background-color: #1e293b; color: white; border: none;">
+      <option value="bond_form_receiver.html">العربية 🇸🇦</option>
+      <option value="bond_form_receiver_en.html" selected>English 🇺🇸</option>
+    </select>
+  </div>
+  <div class="container">
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="https://gateway.pinata.cloud/ipfs/bafybeiesiilzk5tfdyay27g3v2qaelrftjtc7q2y5i426us54lu5lwkekq" alt="Sanad Logo" style="max-width:140px;border-radius:12px;"/>
+    </div>
+
+    <h2>📄 Official Digital Bond – Second Party Signature</h2>
+
+    <div class="section-title">First Party Data</div>
+    <div class="bond-field"><span>Full Name:</span> <span id="sender_name">Loading…</span></div>
+    <div class="bond-field"><span>ID Number:</span> <span id="sender_id">Loading…</span></div>
+    <div class="bond-field"><span>Email:</span> <span id="sender_email">Loading…</span></div>
+    <div class="bond-field"><span>Country:</span> <span id="sender_country">Loading…</span></div>
+    <div class="bond-field"><span>City:</span> <span id="sender_city">Loading…</span></div>
+    <div class="bond-field"><span>Wallet Address:</span> <span id="sender_wallet">Loading…</span><input type="hidden" id="wallet_input_hidden"/></div>
+
+    <div class="section-title">Second Party Data</div>
+    <div class="bond-field"><span>Full Name:</span> <span id="receiver_name">Loading…</span></div>
+    <div class="bond-field"><span>ID Number:</span> <span id="receiver_id">Loading…</span></div>
+    <div class="bond-field"><span>Email:</span> <span id="receiver_email">Loading…</span></div>
+    <div class="bond-field"><span>Country:</span> <span id="receiver_country">Loading…</span></div>
+    <div class="bond-field"><span>City:</span> <span id="receiver_city">Loading…</span></div>
+
+    <div class="section-title">Bond Content</div>
+    <div class="bond-field"><span>Subject:</span> <span id="subject">Loading…</span></div>
+    <div class="bond-field"><span>Details:</span> <span id="details">Loading…</span></div>
+
+    <div class="section-title">✍️ Second Party Signature</div>
+    <canvas id="signature-pad" width="600" height="200"></canvas>
+    <button type="button" onclick="clearSignature()">🧹 Clear Signature</button>
+    <br/>
+
+    <div style="margin-top:15px;">
+      <input type="checkbox" id="agreeCheckbox"/>
+      <label for="agreeCheckbox">I agree to all terms and legal details above</label>
+    </div>
+    <button onclick="submitSignature()">📩 Confirm Signature</button>
+
+    <div class="legal-note">
+      🔒 <b>Legal Notice:</b> By signing this bond digitally, you commit to all stated terms freely and acknowledge its legal validity under electronic signature and blockchain laws. This bond is an enforceable digital document.
+    </div>
+
+    <input type="hidden" id="signature_data"/>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.6/dist/signature_pad.umd.min.js"></script>
+  <script>
+    const qp = new URLSearchParams(window.location.search);
+    const get = key => qp.get(key) || "undefined";
+
+    ['sender_name','sender_id','sender_email','sender_country','sender_city','sender_wallet',
+     'receiver_name','receiver_id','receiver_email','receiver_country','receiver_city',
+     'subject','details'].forEach(id => {
+      document.getElementById(id).innerText = get(id);
+    });
+
+    const canvas = document.getElementById('signature-pad');
+    const signaturePad = new SignaturePad(canvas, { backgroundColor: 'rgb(30,41,59)' });
+
+    function clearSignature() { signaturePad.clear(); }
+
+    function submitSignature() {
+      if (!document.getElementById('agreeCheckbox').checked) {
+        alert("Please agree to the terms before signing.");
+        return;
+      }
+      if (signaturePad.isEmpty()) {
+        alert("Please sign the bond before submitting.");
+        return;
+      }
+      const data = {
+        signature: signaturePad.toDataURL(),
+        timestamp: new Date().toISOString(),
+        receiver_name: get("receiver_name")
+      };
+      console.log("✅ Bond signed:", data);
+      alert("✅ Bond signed successfully!");
+    }
+  </script>
+
+  <!-- Solana Web3 -->
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+  <div style="position:fixed;top:20px;right:20px;z-index:9999;">
+    <button id="connectWallet" style="padding:10px 20px;background-color:#22d3ee;color:black;font-weight:bold;border:none;border-radius:10px;cursor:pointer;">
+      Connect Wallet
+    </button>
+  </div>
+  <script>
+    const connectBtn = document.getElementById('connectWallet');
+    async function connectWallet() {
+      if (window.solana) {
+        try {
+          const resp = await window.solana.connect();
+          const addr = resp.publicKey.toString();
+          connectBtn.textContent = addr.slice(0,4) + "…" + addr.slice(-4);
+          connectBtn.disabled = true;
+          document.getElementById("wallet_input_hidden").value = addr;
+          document.getElementById("sender_wallet").textContent = addr;
+        } catch(e) {
+          console.warn("❌ Failed to connect wallet:", e);
+        }
+      } else {
+        alert("Please install Phantom wallet first.");
+        window.open("https://phantom.app/", "_blank");
+      }
+    }
+    connectBtn.addEventListener('click', connectWallet);
+  </script>
+</body>
+</html>
